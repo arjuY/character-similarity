@@ -5,6 +5,11 @@ In this project, a vector representation of a document containing lines spoken b
 This data is not publicly avalilable. The following columns from the eastenders's dataset are used for this project: Episode, Scene, Scene_info, Character_name, Line. As the lines of each character are not evenly distributed in terms of frequency, the first **360 lines** of each character in the training data is used to create the training documents, and the first **40 lines** in the test data.
 
 # Part A
-## Preprocessing
-It is done by using various techniques and the performance was measured individually for each technique and combinations of the techniques based on mean rank, accuracy and cosine similarity. The combination of technique that gave good results are removing punctuation, stopword removal and lemmatization.
-## 
+**Preprocessing, Feature Extraction and Error Analysis**
+Proprecessing and Feature extraction is done by using various techniques and the performance was measured individually for each technique and combinations of the techniques based on mean rank, accuracy and cosine similarity. Error analysis is done to find out the extra feature that can be used to create a better vector representation.
+
+# Part B
+**Added dialogue context and scene feature, improved vectorization method**
+The Scene_info column is used to add scene feature and Lines before and after a particutar Line are take for the dialogue context. A matrix transformation technique called TF-IDF is used. TF-IDF scales down the impact of tokens that occur very frequently in the corpus making it a common term weighting scheme in information retrieval.
+
+The final mean rank acheived on test data is 1.375
